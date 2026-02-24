@@ -21,7 +21,7 @@ export const products = [
     name: 'Cisternes Alimentàries Inox AISI-316L',
     type: 'Alimentari',
     origin: 'Ttiko Trans',
-    specs: 'Servei de transport en cisterna de productes líquids alimentaris a granel, amb compliment del Reglament (CE) 852/2004 i protocols de neteja CIP certificat. Material: Acer inoxidable sanitari AISI 316L. Capacitat: 28.500-32.000L. Divisions: 1–3 compartiments. Vàlvules DN80 i DN100. Control de temperatura: +5ºC/+65ºC. Certificacions: ATP, ISO 22000, HACCP. Neteja CIP, Traçabilitat i seguiment GPS 24/7.',
+    specs: '',
     image: findImage('stainless-tanker-new'),
   },
   {
@@ -64,7 +64,7 @@ export const trucks = [
     name: 'Scania R-Series Chemo',
     capacity: '28,000 Litres',
     status: 'Disponible',
-    specs: 'Tanc d\'acer inoxidable, Bomba d\'alta pressió',
+    specs: "Tanc d'acer inoxidable, Bomba d'alta pressió",
     image: findImage('truck-specialized'),
   },
     {

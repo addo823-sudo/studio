@@ -1,95 +1,113 @@
 
-'use client';
-
 import { PageHeader } from '@/app/components/page-header';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle } from 'lucide-react';
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import {
+  Clock,
+  Droplets,
+  FileText,
+  Globe,
+  ShieldCheck,
+  Truck,
+  Wrench,
+  Package,
+  TrendingUp,
+  DownloadCloud,
+} from 'lucide-react';
 
-const ServiceCard = ({
-  title,
-  description,
-  features,
-  logistics,
-  imageId,
-}: {
-  title: string;
-  description: string;
-  features: string[];
-  logistics: string[];
-  imageId: string;
-}) => {
-  const image = PlaceHolderImages.find((img) => img.id === imageId);
+const mainServices = [
+  {
+    icon: Droplets,
+    title: 'Transport de mercaderies líquides',
+    items: [
+      'Líquids alimentaris (olis, llet, sucs, aigua potable, etc.)',
+      'Productes químics no perillosos',
+      'Combustibles i carburants',
+      'Gasos liquats (GLP)',
+      'Productes industrials líquids',
+    ],
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Transport de mercaderies perilloses (ADR)',
+    description:
+      'Moltes cisternes estan certificades per transportar substàncies perilloses segons la normativa ADR (Acord Europeu relatiu al transport internacional de mercaderies perilloses per carretera), cosa que implica:',
+    items: [
+      'Vehicles homologats',
+      'Conductors amb formació específica ADR',
+      'Documentació i senyalització adequades',
+      'Plans d’emergència i seguretat',
+    ],
+  },
+];
 
-  return (
-    <Card className="overflow-hidden shadow-lg">
-      {image && (
-        <div className="relative h-64 w-full">
-          <Image
-            src={image.imageUrl}
-            alt={image.description}
-            fill
-            className="object-cover"
-            data-ai-hint={image.imageHint}
-          />
-        </div>
-      )}
-      <CardHeader>
-        <CardTitle>{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
-      </CardHeader>
-      <CardContent className="grid md:grid-cols-2 gap-6">
-        <div>
-          <h4 className="font-semibold mb-2 text-card-foreground">Característiques tècniques:</h4>
-          <ul className="space-y-2">
-            {features.map((feature, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">{feature}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-semibold mb-2 text-card-foreground">Operativa logística:</h4>
-           <ul className="space-y-2">
-            {logistics.map((item, index) => (
-              <li key={index} className="flex items-start gap-2">
-                <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
+const valueAddedServices = [
+  {
+    icon: TrendingUp,
+    title: 'Solucions de valor afegit',
+    items: [
+      'Seguiment en temps real dels vehicles (GPS)',
+      'Assessorament en logística i transport',
+      'Emmagatzematge temporal (si disposen d’instal·lacions)',
+      'Gestió de rutes i optimització de càrregues',
+    ],
+  },
+  {
+    icon: Wrench,
+    title: 'Manteniment i gestió de cisternes',
+    description: 'Algunes empreses ofereixen:',
+    items: [
+      'Neteja i descontaminació de cisternes',
+      'Manteniment i revisions tècniques',
+      'Certificació i revisions reglamentàries.',
+    ],
+  },
+];
+
+const logisticServices = [
+  {
+    icon: FileText,
+    title: 'Gestió documental i compliment normatiu',
+    items: [
+      'Preparació de documentació de transport',
+      'Gestió de permisos especials (si cal)',
+      'Certificats de conformitat',
+      'Etiquetatge i senyalització ADR',
+    ],
+  },
+  {
+    icon: DownloadCloud,
+    title: 'Serveis de càrrega i descàrrega',
+    items: [
+      'Bombament i accessoris de connexió',
+      'Mànegues específiques',
+      'Personal qualificat per a la manipulació de productes',
+    ],
+  },
+  {
+    icon: Globe,
+    title: 'Rutes nacionals i internacionals',
+    items: [
+      'Transport dins del país',
+      'Enviaments a altres països de la UE i extracomunitaris (segons autoritzacions)',
+    ],
+  },
+  {
+    icon: Clock,
+    title: 'Servei urgent i programació flexible',
+    items: [
+      'Transport programat segons les necessitats del client',
+      'Opcions de servei ràpid o prioritari',
+    ],
+  },
+];
 
 export default function ServiciosPage() {
-  const servicios = [
-    {
-      title: 'Cisternes Alimentàries Inox AISI-316L (REF: TET-ALM/316-1)',
-      description:
-        'Servei de transport en cisterna de productes líquids alimentaris a granel, amb compliment del Reglament (CE) 852/2004 i protocols de neteja CIP certificat.',
-      features: [
-        'Material: Acer inoxidable sanitari AISI 316L (resistent a àcids alimentaris).',
-        'Capacitat: Entre 28.500 i 32.000 litres.',
-        'Divisions: 1–3 compartiments hermètics.',
-        'Sistema de segellat: Vàlvules DN80 i DN100 certificades.',
-        'Control de temperatura: +5ºC / +65ºC (segons producte).',
-        'Certificacions: ATP, ISO 22000, HACCP.',
-      ],
-      logistics: [
-        'Neteja CIP documental (certificat descarregable en PDF).',
-        'Traçabilitat lot / cisterna / client.',
-        'Gestió POD digital i seguiment GPS 24/7.',
-      ],
-      imageId: 'stainless-tanker-new',
-    },
-  ];
-
   return (
     <div className="p-8 flex-1 bg-service-background">
       <PageHeader
@@ -97,9 +115,87 @@ export default function ServiciosPage() {
         description="Descobreixi la gamma de serveis de transport especialitzat que oferim."
       />
       <div className="space-y-8">
-        {servicios.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {mainServices.map((service, index) => (
+            <Card key={index} className="flex flex-col">
+              <CardHeader className="flex-row items-start gap-4">
+                <service.icon className="h-8 w-8 text-primary flex-shrink-0" />
+                <div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  {service.description && (
+                    <CardDescription className="pt-2">
+                      {service.description}
+                    </CardDescription>
+                  )}
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow pt-0">
+                <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                  {service.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <Card className="shadow-lg">
+          <CardHeader className="flex-row items-start gap-4">
+            <Package className="h-8 w-8 text-primary flex-shrink-0" />
+            <div>
+              <CardTitle className="text-xl">
+                Serveis logístics addicionals
+              </CardTitle>
+              <CardDescription className="pt-2">
+                A més del transport, aquestes empreses solen oferir serveis
+                complementaris com ara:
+              </CardDescription>
+            </div>
+          </CardHeader>
+          <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 pt-0">
+            {logisticServices.map((service, index) => (
+              <div key={index}>
+                <div className="flex items-center gap-3 mb-2">
+                  <service.icon className="h-5 w-5 text-primary" />
+                  <h3 className="font-semibold text-card-foreground">
+                    {service.title}
+                  </h3>
+                </div>
+                <ul className="space-y-1.5 list-disc list-inside text-sm text-muted-foreground pl-4">
+                  {service.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {valueAddedServices.map((service, index) => (
+            <Card key={index} className="flex flex-col">
+              <CardHeader className="flex-row items-start gap-4">
+                <service.icon className="h-8 w-8 text-primary flex-shrink-0" />
+                <div>
+                  <CardTitle className="text-xl">{service.title}</CardTitle>
+                  {service.description && (
+                    <CardDescription className="pt-2">
+                      {service.description}
+                    </CardDescription>
+                  )}
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow pt-0">
+                <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                  {service.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );

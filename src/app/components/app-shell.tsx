@@ -28,7 +28,7 @@ const moreNavItems = [
   { href: '/formulario', label: 'Formulari', icon: FileText },
   { href: '/products', label: 'Productes', icon: Droplets },
   { href: '/nuestra-flota', label: 'La Nostra Flota', icon: Truck },
-  { href: '/orders', label: 'Les Meves Comandes', icon: ClipboardList },
+  { href: '/booking', label: 'Sol·licituds', icon: ClipboardList },
   { href: '/documents', label: 'Factures', icon: Download },
   { href: '/tracking', label: 'Seguiment', icon: Search },
   { href: '/login', label: 'Àrea Clients', icon: UserCircle },

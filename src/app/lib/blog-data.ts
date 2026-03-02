@@ -36,8 +36,8 @@ Un dels punts forts de la comunitat de transportistes de cisternes són els seus
     id: 2,
     title: 'Novetats i regulacions',
     content: `A partir del 23 de gener de 2026, els vehicles cisterna a Espanya podran circular amb una massa màxima autoritzada (MMA) de 44 tones. Aquest canvi, que augmenta el límit anterior de 40 tones, té com a objectiu millorar la productivitat i l'eficiència del transport de mercaderies per carretera. Tot i que permetrà transportar més càrrega útil per viatge, reduint el cost per tona per als carregadors, també implicarà un augment dels costos operatius per als transportistes, com ara un major consum de combustible i desgast dels pneumàtics.`,
-    imageUrl: 'https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop',
-    imageHint: 'regulation book'
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    imageHint: 'data charts'
   },
   {
     id: 3,
@@ -52,7 +52,7 @@ El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar
     id: 4,
     title: 'Esdeveniments i dinamisme del sector',
     content: 'Un dels punts forts de la comunitat de transportistes de cisternes són els seus congressos i trobades professionals. Per exemple, en el 10è Congrés Nacional d’Empresaris de Transport en Cisternes, celebrat a Madrid, es van debatre temes com els costos de les 44 Tn i l’evolució del mercat, i es va anunciar l’actualització de l’Observatorio de Costes per adaptar-se a la nova MMA.',
-    imageUrl: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop',
-    imageHint: 'professional event'
+    imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop',
+    imageHint: 'conference audience'
   }
 ];

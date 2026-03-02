@@ -9,6 +9,7 @@ import { ShieldCheck, Thermometer, Droplets, Anchor, Route, Zap, FileText } from
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -180,6 +181,9 @@ export default function NuestraFlotaPage() {
                       </ul>
                     </div>
                     <div className="flex justify-end gap-2 mt-4">
+                        <DialogClose asChild>
+                           <Button variant="outline">Enrere</Button>
+                        </DialogClose>
                         <Button asChild variant="outline">
                             <Link href="/contacto">Contactar</Link>
                         </Button>

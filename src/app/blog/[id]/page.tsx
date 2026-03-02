@@ -1,7 +1,10 @@
-import { PageHeader } from '@/app/components/page-header';
+
 import { blogPosts } from '@/app/lib/blog-data';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft } from 'lucide-react';
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
@@ -19,6 +22,14 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
   return (
     <div className="p-8 flex-1">
       <div className="container mx-auto">
+        <div className="mb-8">
+            <Button asChild variant="outline">
+                <Link href="/blog">
+                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    Enrere
+                </Link>
+            </Button>
+        </div>
         <div className="relative h-96 w-full overflow-hidden rounded-lg shadow-lg mb-8">
             {post.imageUrl && (
                 <Image

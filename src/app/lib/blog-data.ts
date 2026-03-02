@@ -45,7 +45,7 @@ Un dels punts forts de la comunitat de transportistes de cisternes són els seus
     content: `Segons CETM Cisternas, la demanda de transport en cisternes ha estat més irregular respecte a l’any anterior, amb per un augment dels trajectes en buit i dificultats per trobar conductors especialitzats. També destaca l’impacte dels costos creixents (combustible, assegurances, etc.) sobre la rendibilitat de les empreses de transport.
 
 El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar recursos i la complexitat de repartir equitativament costos i beneficis entre transportistes i carregadors.`,
-    imageUrl: 'https://lexlatin.com/sites/default/files/2023-08/boletin_gestion_290823-2.jpg',
-    imageHint: 'logistics management'
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e28f81?q=80&w=2070&auto=format&fit=crop',
+    imageHint: 'data analytics'
   }
 ];

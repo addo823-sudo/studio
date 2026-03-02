@@ -1,16 +1,46 @@
 export const blogPosts = [
   {
     id: 1,
-    title: 'Tendències en el transport de cisternes 2025',
-    content: 'El sector evoluciona cap a vehicles més eficients, sistemes de seguiment avançats i normatives més estrictes per garantir la seguretat en el transport de líquids.',
-    imageUrl: 'https://logweb.com.br/wp-content/uploads/2024/11/Foto-Artigo-Luis-Soria-Novembro-2024-1024x585.webp',
-    imageHint: 'tanker truck technology'
-  },
-  {
-    id: 2,
-    title: 'La importància de les cisternes certificades en el transport ADR',
-    content: 'Un repàs als requisits i estàndards que han de complir els vehicles per transportar substàncies químiques perilloses.',
-    imageUrl: 'https://tse2.mm.bing.net/th/id/OIP.M1SpenjNXWE-GmxfsS9u6wHaGy?pid=Api&P=0&h=180',
-    imageHint: 'ADR certified tanker'
+    title: 'El transport en cisternes: notícies i tendències de la indústria (2025–2026)',
+    content: `El transport en cisternas —és a dir, el moviment de líquids i gasos (carburants, químics, aliments líquids, gasos criogènics, etc.) sobre rodes— és un sector clau dins de la logística terrestre. A mesura que l’economia i les regulacions evolucionen, aquesta especialitat s’enfronta a canvis normatius, tecnològics i de mercat. A continuació, fem una panoràmica amb la informació més rellevant del sector.
+
+🆕 Novetats i regulacions
+✅ Les cisternes ja poden circular amb 44 Tn de MMA
+
+A partir del 23 de gener de 2026, els vehicles cisterna a Espanya poden circular amb una massa màxima autoritzada (MMA) de 44 tonelades, en lloc de les 40 tonelades anteriors. Aquest canvi busca millorar la productivitat del sector, però també comporta reptes operatius i de cost per a les empreses transportistes, segons la Asociación Empresarial de Transporte de Mercancías en Cisternas (CETM Cisternas).
+
+Impuls per la competitivitat
+Aquest increment permet transportar més càrrega útil per viatge, la qual cosa potencia l’eficiència global del transport i redueix el cost unitari per tona per als carregadors.
+
+Reptes per als transportistes
+Tot i això, l’augment de pes també suposa un increment d’alguns costos operatius, com el consum de combustible, el desgast de pneumàtics i els costos de seguretat i assegurança. Això eleva els costos per quilòmetre per als transportistes en més d’un 8 %.
+
+📊 Situació del sector i demanda
+
+Segons CETM Cisternas, la demanda de transport en cisternes ha estat més irregular respecte a l’any anterior, amb per un augment dels trajectes en buit i dificultats per trobar conductors especialitzats. També destaca l’impacte dels costos creixents (combustible, assegurances, etc.) sobre la rendibilitat de les empreses de transport.
+
+El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar recursos i la complexitat de repartir equitativament costos i beneficis entre transportistes i carregadors.
+
+🚚 Tendències globals del transport de cisternes
+
+Fora de l’àmbit estricte d’Espanya, el sector global del tanker transport (aquesta categoria inclou camions cisterna a carretera i vaixells cisterna en marítim) està experimentant canvis importants:
+
+🌱 Sostenibilitat i energies alternatives
+
+La indústria s’està orientant cap a tecnologies més verdes, com propulsió LNG, hidrogen i altres combustibles nets, amb l’objectiu de reduir les emissions i complir les noves regulacions ambientals.
+
+🤖 Digitalització i eficiència
+
+Tecnologies com AI, IoT i sistemes de gestió intel·ligent estan transformant la planificació de rutes, el seguiment de càrrega i la monitorització de la flota, cosa que pot reduir costos operatius i millorar la seguretat.
+
+🚢 Modernització de flotes
+
+En el segment marítim, també s’observa una renovació de flotes enfocada a models més eficients i normes mediambientals estrictes, així com una major adoção de solucions de sostenibilitat.
+
+📅 Esdeveniments i dinamisme del sector
+
+Un dels punts forts de la comunitat de transportistes de cisternes són els seus congressos i trobades professionals. Per exemple, en el 10è Congrés Nacional d’Empresaris de Transport en Cisternes, celebrat a Madrid, es van debatre temes com els costos de les 44 Tn i l’evolució del mercat, i es va anunciar l’actualització de l’Observatorio de Costes per adaptar-se a la nova MMA.`,
+    imageUrl: 'https://images.unsplash.com/photo-1571708343135-c57656a81d13?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    imageHint: 'tanker truck highway'
   }
 ];

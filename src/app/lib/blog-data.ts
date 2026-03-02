@@ -24,11 +24,7 @@ Tecnologies com AI, IoT i sistemes de gestió intel·ligent estan transformant l
 
 🚢 Modernització de flotes
 
-En el segment marítim, també s’observa una renovació de flotes enfocada a models més eficients i normes mediambientals estrictes, així com una major adoção de solucions de sostenibilitat.
-
-📅 Esdeveniments i dinamisme del sector
-
-Un dels punts forts de la comunitat de transportistes de cisternes són els seus congressos i trobades professionals. Per exemple, en el 10è Congrés Nacional d’Empresaris de Transport en Cisternes, celebrat a Madrid, es van debatre temes com els costos de les 44 Tn i l’evolució del mercat, i es va anunciar l’actualització de l’Observatorio de Costes per adaptar-se a la nova MMA.`,
+En el segment marítim, també s’observa una renovació de flotes enfocada a models més eficients i normes mediambientals estrictes, així com una major adoção de solucions de sostenibilitat.`,
     imageUrl: '/logo sin fondo.png',
     imageHint: 'company logo'
   },

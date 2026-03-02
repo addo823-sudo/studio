@@ -40,7 +40,7 @@ En el segment marítim, també s’observa una renovació de flotes enfocada a m
 📅 Esdeveniments i dinamisme del sector
 
 Un dels punts forts de la comunitat de transportistes de cisternes són els seus congressos i trobades professionals. Per exemple, en el 10è Congrés Nacional d’Empresaris de Transport en Cisternes, celebrat a Madrid, es van debatre temes com els costos de les 44 Tn i l’evolució del mercat, i es va anunciar l’actualització de l’Observatorio de Costes per adaptar-se a la nova MMA.`,
-    imageUrl: 'https://images.unsplash.com/photo-1571708343135-c57656a81d13?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    imageHint: 'tanker truck highway'
+    imageUrl: 'https://images.unsplash.com/photo-1654452519639-a77d0fb31025?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHx0YW5rZXIlMjB0cnVja3xlbnwwfHx8fDE3NjM1MzAxMzN8MA&ixlib=rb-4.1.0&q=80&w=1080',
+    imageHint: 'tanker truck'
   }
 ];

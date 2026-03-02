@@ -5,7 +5,7 @@ export const blogPosts = [
     content: `El transport en cisternas —és a dir, el moviment de líquids i gasos (carburants, químics, aliments líquids, gasos criogènics, etc.) sobre rodes— és un sector clau dins de la logística terrestre. A mesura que l’economia i les regulacions evolucionen, aquesta especialitat s’enfronta a canvis normatius, tecnològics i de mercat. A continuació, fem una panoràmica amb la informació més rellevant del sector.
 
 🆕 Novetats i regulacions
-✅ Les cisternes ja poden circular amb 44 Tn de MMA
+✅ Las cisternas ja poden circular amb 44 Tn de MMA
 
 A partir del 23 de gener de 2026, els vehicles cisterna a Espanya poden circular amb una massa màxima autoritzada (MMA) de 44 tonelades, en lloc de les 40 tonelades anteriors. Aquest canvi busca millorar la productivitat del sector, però també comporta reptes operatius i de cost per a les empreses transportistes, segons la Asociación Empresarial de Transporte de Mercancías en Cisternas (CETM Cisternas).
 

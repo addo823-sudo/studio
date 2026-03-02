@@ -30,7 +30,7 @@ const tankerTypes = [
         'Certificacions: ATP, ISO 22000, HACCP',
         'Neteja CIP, Traçabilitat i seguiment GPS 24/7'
     ],
-    imageUrl: 'https://tse1.mm.bing.net/th/id/OIP.thmWS8Km2_zlZimGhClpvgHaFL?pid=Api&P=0&h=180',
+    imageUrl: '/Cisterna Alimentaria.jpg',
     imageHint: 'stainless tanker',
     icons: [
       { icon: Thermometer, label: 'Control de Temperatura' },

@@ -1,3 +1,4 @@
+
 'use client';
 
 import { PageHeader } from '@/app/components/page-header';
@@ -47,8 +48,8 @@ const tankerTypes = [
         'Normatives: ADR 2025, REACH, UNE-EN 14025',
         'Classes ADR: Classe 8 (corrosius), Classe 3 (inflamables), Classe 6.1 (tòxics)',
     ],
-    imageUrl: 'https://www.cisternashnosfajardo.com/wp-content/uploads/2018/11/SLIDE-1-800x400.jpg',
-    imageHint: 'ADR truck',
+    imageUrl: '/ADR 8.gif',
+    imageHint: 'ADR sign',
     icons: [
       { icon: ShieldCheck, label: 'ADR' },
       { icon: Zap, label: 'Classe 3 i 8' },

@@ -322,7 +322,7 @@ export default function DocumentsPage() {
   }
 
   return (
-    <div className="p-8 flex-1">
+    <div className="p-8 flex-1 print:hidden">
       <PageHeader
         title="Factures"
         description="Aquí podeu veure i imprimir les vostres factures."

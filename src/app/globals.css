@@ -94,6 +94,9 @@
 }
 
 @media print {
+  body::before {
+    display: none;
+  }
   body * {
     visibility: hidden;
   }

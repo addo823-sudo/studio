@@ -10,12 +10,6 @@ Aquest increment permet transportar més càrrega útil per viatge, la qual cosa
 Reptes per als transportistes
 Tot i això, l’augment de pes també suposa un increment d’alguns costos operatius, com el consum de combustible, el desgast de pneumàtics i els costos de seguretat i assegurança. Això eleva els costos per quilòmetre per als transportistes en més d’un 8 %.
 
-📊 Situació del sector i demanda
-
-Segons CETM Cisternas, la demanda de transport en cisternes ha estat més irregular respecte a l’any anterior, amb per un augment dels trajectes en buit i dificultats per trobar conductors especialitzats. També destaca l’impacte dels costos creixents (combustible, assegurances, etc.) sobre la rendibilitat de les empreses de transport.
-
-El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar recursos i la complexitat de repartir equitativament costos i beneficis entre transportistes i carregadors.
-
 🚚 Tendències globals del transport de cisternes
 
 Fora de l’àmbit estricte d’Espanya, el sector global del tanker transport (aquesta categoria inclou camions cisterna a carretera i vaixells cisterna en marítim) està experimentant canvis importants:
@@ -44,5 +38,14 @@ Un dels punts forts de la comunitat de transportistes de cisternes són els seus
     content: `A partir del 23 de gener de 2026, els vehicles cisterna a Espanya podran circular amb una massa màxima autoritzada (MMA) de 44 tones. Aquest canvi, que augmenta el límit anterior de 40 tones, té com a objectiu millorar la productivitat i l'eficiència del transport de mercaderies per carretera. Tot i que permetrà transportar més càrrega útil per viatge, reduint el cost per tona per als carregadors, també implicarà un augment dels costos operatius per als transportistes, com ara un major consum de combustible i desgast dels pneumàtics.`,
     imageUrl: 'https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=2070&auto=format&fit=crop',
     imageHint: 'regulation book'
+  },
+  {
+    id: 3,
+    title: 'Situació del sector i demanda',
+    content: `Segons CETM Cisternas, la demanda de transport en cisternes ha estat més irregular respecte a l’any anterior, amb per un augment dels trajectes en buit i dificultats per trobar conductors especialitzats. També destaca l’impacte dels costos creixents (combustible, assegurances, etc.) sobre la rendibilitat de les empreses de transport.
+
+El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar recursos i la complexitat de repartir equitativament costos i beneficis entre transportistes i carregadors.`,
+    imageUrl: 'https://lexlatin.com/sites/default/files/2023-08/boletin_gestion_290823-2.jpg',
+    imageHint: 'logistics management'
   }
 ];

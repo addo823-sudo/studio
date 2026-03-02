@@ -10,7 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Loader2, AlertCircle } from 'lucide-react';
+import { Loader2, AlertCircle, ArrowLeft } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
 
@@ -166,7 +166,12 @@ export default function BookingPage() {
       <PageHeader
         title="Gestió de Sol·licituds"
         description="Creï una nova sol·licitud de transport o consulti el seu historial."
-      />
+      >
+        <Button variant="outline" onClick={() => router.back()}>
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            Enrere
+        </Button>
+      </PageHeader>
       
       <div className="grid gap-12 lg:grid-cols-5">
         <div className="lg:col-span-2">

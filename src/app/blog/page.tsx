@@ -44,9 +44,12 @@ export default function BlogPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground line-clamp-3">
+                <p className="text-muted-foreground line-clamp-3 mb-4">
                   {post.content}
                 </p>
+                <Link href={`/blog/${post.id}`} className="text-sm font-semibold text-primary hover:underline">
+                  Llegir més
+                </Link>
               </CardContent>
             </Card>
           ))}

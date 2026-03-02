@@ -52,7 +52,7 @@ El debat sobre les 44 Tn demostra les tensions entre la necessitat de optimitzar
     id: 4,
     title: 'Esdeveniments i dinamisme del sector',
     content: 'Un dels punts forts de la comunitat de transportistes de cisternes són els seus congressos i trobades professionals. Per exemple, en el 10è Congrés Nacional d’Empresaris de Transport en Cisternes, celebrat a Madrid, es van debatre temes com els costos de les 44 Tn i l’evolució del mercat, i es va anunciar l’actualització de l’Observatorio de Costes per adaptar-se a la nova MMA.',
-    imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2070&auto=format&fit=crop',
-    imageHint: 'conference audience'
+    imageUrl: '/Tendencias.jpg',
+    imageHint: 'trends'
   }
 ];

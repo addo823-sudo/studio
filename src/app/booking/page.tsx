@@ -115,7 +115,7 @@ export default function BookingPage() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            data: newRequestData
+            data: [newRequestData]
         })
       });
 

@@ -91,25 +91,47 @@ export default function ProductsPage() {
           </Card>
 
           {/* Productes Alimentaris */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+             <div className="relative h-48 w-full">
+              <Image
+                src="/Alimentario.jpg"
+                alt="Productes Alimentaris"
+                fill
+                className="object-cover"
+                data-ai-hint="food transport"
+              />
+            </div>
             <CardHeader>
               <div className="flex items-center gap-4">
                 <GlassWater className="h-10 w-10 text-primary" />
                 <CardTitle>Productes Alimentaris</CardTitle>
               </div>
-              <CardDescription className="pt-2">
-                Utilitzem cisternes d'acer inoxidable per garantir la màxima qualitat i higiene en el transport de productes alimentaris.
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                <li>Llet i derivats</li>
-                <li>Vi</li>
-                <li>Oli vegetal</li>
-                <li>Sucs</li>
-                <li>Xarops i glucosa líquida</li>
-                <li>Aigua potable</li>
-              </ul>
+               <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto text-sm font-semibold flex items-center"
+                  >
+                    Més informació
+                    <ChevronsUpDown className="h-4 w-4 ml-1" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4 space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    Utilitzem cisternes d'acer inoxidable per garantir la màxima qualitat i higiene en el transport de productes alimentaris.
+                  </p>
+                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                    <li>Llet i derivats</li>
+                    <li>Vi</li>
+                    <li>Oli vegetal</li>
+                    <li>Sucs</li>
+                    <li>Xarops i glucosa líquida</li>
+                    <li>Aigua potable</li>
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
             </CardContent>
           </Card>
 

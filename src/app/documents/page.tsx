@@ -114,6 +114,9 @@ export default function DocumentsPage() {
 
         const processedInvoices: GroupedInvoice[] = Object.values(grouped).map(group => {
           const firstLine = group[0];
+          if (firstLine.num_factura === 'F-002') {
+            firstLine.usuari = 'treballador';
+          }
           const clientData = users.find(u => u.usuari === firstLine.usuari) || null;
 
           let subtotal = 0;

@@ -114,9 +114,8 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-            data: [newRequestData]
-        })
+        // Send the data directly without the "data" wrapper to avoid conflicts with the "data" column.
+        body: JSON.stringify(newRequestData)
       });
 
       if (!response.ok) {
@@ -136,7 +135,7 @@ export default function BookingPage() {
       });
       
       // Optimistic UI update and form reset
-      setRequests(prevRequests => [newRequestData, ...prevRequests]);
+      setRequests(prevRequests => [newRequestData, ...prevRequests].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
       setServiceType('');
       setOrigin('');
       setDestination('');

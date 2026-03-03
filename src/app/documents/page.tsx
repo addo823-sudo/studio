@@ -117,6 +117,9 @@ export default function DocumentsPage() {
           if (firstLine.num_factura === 'F-002') {
             firstLine.usuari = 'treballador';
           }
+          if (firstLine.num_factura === 'F-001') {
+            firstLine.usuari = 'Administrador';
+          }
           const clientData = users.find(u => u.usuari === firstLine.usuari) || null;
 
           let subtotal = 0;

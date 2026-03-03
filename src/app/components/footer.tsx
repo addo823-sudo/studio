@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -28,7 +27,7 @@ export function Footer() {
             Política de Privacitat
           </Link>
           <Link href="/politica-de-cookies" className="text-muted-foreground hover:text-primary transition-colors">
-            Política de Galetes
+            Política de Cookies
           </Link>
         </div>
         

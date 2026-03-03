@@ -5,7 +5,7 @@ export default function PoliticaCookiesPage() {
   return (
     <div className="p-8 flex-1">
       <div className="container mx-auto">
-        <PageHeader title="Política de Galetes" />
+        <PageHeader title="Política de Cookies" />
         <div className="bg-card text-card-foreground rounded-lg border shadow-sm p-6 md:p-8 space-y-6">
           
           <div className="space-y-2">

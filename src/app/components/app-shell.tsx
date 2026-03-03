@@ -30,6 +30,7 @@ const moreNavItems = [
   { href: '/nuestra-flota', label: 'La Nostra Flota', icon: Truck },
   { href: '/documents', label: 'Factures', icon: Download },
   { href: '/tracking', label: 'Seguiment', icon: Search },
+  { href: '/booking', label: 'Sol·licituds', icon: ClipboardList },
   { href: '/login', label: 'Àrea Clients', icon: UserCircle },
 ];
 

@@ -136,23 +136,46 @@ export default function ProductsPage() {
           </Card>
 
           {/* Productes Industrials */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+            <div className="relative h-48 w-full">
+              <Image
+                src="/Industriales.jpg"
+                alt="Productes Industrials"
+                fill
+                className="object-cover"
+                data-ai-hint="industrial factory"
+              />
+            </div>
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Factory className="h-10 w-10 text-muted-foreground" />
                 <CardTitle>Productes Industrials</CardTitle>
               </div>
-              <CardDescription className="pt-2">
-                Transportem una àmplia gamma de productes industrials no perillosos, adaptant-nos a les necessitats de cada client.
-              </CardDescription>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-2 list-disc list-inside text-muted-foreground">
-                <li>Resines</li>
-                <li>Làtex</li>
-                <li>Detergents industrials</li>
-                <li>Productes químics tècnics</li>
-              </ul>
+              <Collapsible>
+                <CollapsibleTrigger asChild>
+                  <Button
+                    variant="link"
+                    className="p-0 h-auto text-sm font-semibold flex items-center"
+                  >
+                    Més informació
+                    <ChevronsUpDown className="h-4 w-4 ml-1" />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4 space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    Transportem una àmplia gamma de productes industrials no
+                    perillosos, adaptant-nos a les necessitats de cada client.
+                  </p>
+                  <ul className="space-y-2 list-disc list-inside text-muted-foreground">
+                    <li>Resines</li>
+                    <li>Làtex</li>
+                    <li>Detergents industrials</li>
+                    <li>Productes químics tècnics</li>
+                  </ul>
+                </CollapsibleContent>
+              </Collapsible>
             </CardContent>
           </Card>
         </div>

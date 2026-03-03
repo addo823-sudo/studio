@@ -61,7 +61,6 @@ export default function BookingPage() {
       }
       const data: Solicitud[] = await response.json();
       setSolicituds(data.sort((a, b) => {
-        // Simple date sort assuming DD/MM/YYYY format
         const dateA = a.data.split('/').reverse().join('-');
         const dateB = b.data.split('/').reverse().join('-');
         return new Date(dateB).getTime() - new Date(dateA).getTime();
@@ -267,5 +266,3 @@ export default function BookingPage() {
     </div>
   );
 }
-
-    

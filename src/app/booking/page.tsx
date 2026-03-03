@@ -99,7 +99,7 @@ export default function BookingPage() {
     const today = new Date().toISOString().split('T')[0];
     const details = `Servei: ${serviceType} | Origen: ${origin} | Destí: ${destination} | Càrrega: ${cargo}`;
 
-    const newRequestData = {
+    const newRequestData: BookingRequest = {
         id: newId,
         data: today,
         usuari: userName,
@@ -114,7 +114,7 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ data: newRequestData }) 
+        body: JSON.stringify({ data: [newRequestData] })
       });
 
       if (!response.ok) {
@@ -133,7 +133,7 @@ export default function BookingPage() {
         description: 'La teva sol·licitud s\'ha registrat correctament.',
       });
       
-      // UI update and form reset
+      // Optimistic UI update and form reset
       setRequests(prevRequests => [newRequestData, ...prevRequests].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
       setServiceType('');
       setOrigin('');
@@ -207,7 +207,7 @@ export default function BookingPage() {
                 </div>
               </CardContent>
               <CardFooter>
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                <Button type="submit" className="w-full" disabled={isSubmitting || !serviceType}>
                   {isSubmitting ? <Loader2 className="animate-spin" /> : <Send />}
                   {isSubmitting ? 'Enviant...' : 'Enviar Sol·licitud'}
                 </Button>

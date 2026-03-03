@@ -114,7 +114,7 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ data: [newRequestData] })
+        body: JSON.stringify(newRequestData)
       });
 
       if (!response.ok) {

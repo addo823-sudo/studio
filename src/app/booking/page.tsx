@@ -16,7 +16,7 @@ import { Badge } from '@/components/ui/badge';
 // --- TYPE DEFINITIONS ---
 interface BookingRequest {
   id: string;
-  data: string;
+  DATES: string;
   usuari: string;
   estat: 'Pendent' | 'Aprovat' | string;
   detalls: string;
@@ -67,7 +67,7 @@ export default function BookingPage() {
         throw new Error(`Error ${response.status}: No s'ha pogut carregar l'historial de sol·licituds.`);
       }
       const data: BookingRequest[] = await response.json();
-      setRequests(data.sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
+      setRequests(data.sort((a, b) => new Date(b.DATES).getTime() - new Date(a.DATES).getTime()));
     } catch (e: any) {
       setError(e.message);
       toast({
@@ -101,7 +101,7 @@ export default function BookingPage() {
 
     const newRequestData: BookingRequest = {
         id: newId,
-        data: today,
+        DATES: today,
         usuari: userName,
         estat: 'Pendent',
         detalls: details,
@@ -114,7 +114,7 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newRequestData)
+        body: JSON.stringify({ data: [newRequestData] })
       });
 
       if (!response.ok) {
@@ -134,7 +134,7 @@ export default function BookingPage() {
       });
       
       // Optimistic UI update and form reset
-      setRequests(prevRequests => [newRequestData, ...prevRequests].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
+      setRequests(prevRequests => [newRequestData, ...prevRequests].sort((a, b) => new Date(b.DATES).getTime() - new Date(a.DATES).getTime()));
       setServiceType('');
       setOrigin('');
       setDestination('');
@@ -249,7 +249,7 @@ export default function BookingPage() {
                     <div className="flex justify-between items-start gap-4">
                       <div>
                         <CardTitle className="text-lg">Sol·licitud <span className="font-mono text-primary">{req.id}</span></CardTitle>
-                        <CardDescription>{req.data ? new Date(req.data).toLocaleDateString('ca-ES') : 'Data no disponible'}</CardDescription>
+                        <CardDescription>{req.DATES ? new Date(req.DATES).toLocaleDateString('ca-ES') : 'Data no disponible'}</CardDescription>
                       </div>
                        <Badge variant={req.estat === 'Aprovat' ? 'default' : 'secondary'} className={req.estat === 'Aprovat' ? 'bg-green-600 text-white' : 'bg-yellow-500 text-white'}>
                          {req.estat}

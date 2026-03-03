@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { PageHeader } from '@/app/components/page-header';
 import {
   Card,
@@ -43,7 +44,16 @@ export default function ProductsPage() {
 
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-3">
           {/* Mercaderies Perilloses */}
-          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+            <div className="relative h-48 w-full">
+              <Image
+                src="/ADR.png"
+                alt="Mercaderies Perilloses ADR"
+                fill
+                className="object-cover"
+                data-ai-hint="ADR sign"
+              />
+            </div>
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Flame className="h-10 w-10 text-destructive" />

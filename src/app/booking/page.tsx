@@ -99,7 +99,7 @@ export default function BookingPage() {
     const today = new Date().toISOString().split('T')[0];
     const details = `Servei: ${serviceType} | Origen: ${origin} | Destí: ${destination} | Càrrega: ${cargo}`;
 
-    const newRequestData: BookingRequest = {
+    const newRequestData = {
         id: newId,
         data: today,
         usuari: userName,
@@ -114,8 +114,7 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        // Send the data directly without the "data" wrapper to avoid conflicts with the "data" column.
-        body: JSON.stringify(newRequestData)
+        body: JSON.stringify({ data: [newRequestData] }) 
       });
 
       if (!response.ok) {

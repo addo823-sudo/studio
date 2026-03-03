@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Home, ClipboardList, Droplets, Menu, Truck, Settings, Users, Mail, Newspaper, FileText, Search, UserCircle, Download, ChevronDown } from 'lucide-react';
+import { usePathname, useRouter } from 'next/navigation';
+import { Home, ClipboardList, Droplets, Menu, Truck, Settings, Users, Mail, Newspaper, FileText, Search, UserCircle, Download, ChevronDown, LogOut, LayoutDashboard } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
@@ -11,10 +11,13 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import { Logo } from '@/app/components/logo';
 import { cn } from '@/lib/utils';
 import { Footer } from './footer';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+
 
 const mainNavItems = [
   { href: '/', label: 'Inici', icon: Home },
@@ -28,18 +31,43 @@ const moreNavItems = [
   { href: '/formulario', label: 'Formulari', icon: FileText },
   { href: '/products', label: 'Productes', icon: Droplets },
   { href: '/nuestra-flota', label: 'La Nostra Flota', icon: Truck },
-  { href: '/documents', label: 'Factures', icon: Download },
   { href: '/tracking', label: 'Seguiment', icon: Search },
-  { href: '/booking', label: 'Sol·licituds', icon: ClipboardList },
-  { href: '/login', label: 'Àrea Clients', icon: UserCircle },
 ];
 
-const allNavItems = [...mainNavItems, ...moreNavItems];
-
+const userMenuItems = [
+    { href: '/dashboard', label: 'Panell de control', icon: LayoutDashboard },
+    { href: '/booking', label: 'Sol·licituds', icon: ClipboardList },
+    { href: '/documents', label: 'Factures', icon: Download },
+]
 
 export function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isSheetOpen, setIsSheetOpen] = React.useState(false);
+  const [userName, setUserName] = useState<string | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
+
+  useEffect(() => {
+    // Client-side check for user session
+    const name = localStorage.getItem('userName');
+    setUserName(name);
+    setAuthChecked(true);
+  }, [pathname]); // Re-check on path change
+
+  const handleLogout = () => {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userCompany');
+    setUserName(null);
+    router.push('/login');
+  };
+  
+  const allNavItemsForSheet = [...mainNavItems, ...moreNavItems];
+  if(userName) {
+    allNavItemsForSheet.push(...userMenuItems);
+  } else {
+    allNavItemsForSheet.push({ href: '/login', label: 'Àrea Clients', icon: UserCircle });
+  }
+
 
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -76,6 +104,48 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               </DropdownMenu>
             </nav>
         </div>
+
+        {/* Auth status section */}
+        <div className="ml-auto hidden md:flex items-center gap-4">
+          {authChecked && (
+             userName ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                   <Button variant="ghost" className="flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary data-[state=open]:text-primary focus-visible:ring-0">
+                       <Avatar className="h-8 w-8">
+                         <AvatarFallback>{userName.charAt(0).toUpperCase()}</AvatarFallback>
+                       </Avatar>
+                       {userName}
+                       <ChevronDown className="h-4 w-4" />
+                   </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                    {userMenuItems.map(({ href, label, icon: Icon }) => (
+                        <DropdownMenuItem key={href} asChild>
+                            <Link href={href} className={cn("flex items-center gap-2", pathname === href ? 'text-primary' : '')}>
+                                <Icon className="h-4 w-4" />
+                                {label}
+                            </Link>
+                        </DropdownMenuItem>
+                    ))}
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={handleLogout} className="flex items-center gap-2 cursor-pointer text-destructive focus:text-destructive">
+                        <LogOut className="h-4 w-4" />
+                        Tancar Sessió
+                    </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button asChild>
+                <Link href="/login">
+                  <UserCircle className="mr-2 h-4 w-4" />
+                  Àrea Clients
+                </Link>
+              </Button>
+            )
+          )}
+        </div>
+
         <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
           <SheetTrigger asChild>
             <Button variant="outline" size="icon" className="shrink-0 md:hidden ml-auto">
@@ -89,7 +159,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
             <div className="flex-1 overflow-auto py-4">
               <nav className="grid gap-2 px-4 text-base font-medium">
-              {allNavItems.map(({ href, label, icon: Icon }) => (
+              {allNavItemsForSheet.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={href}
                   href={href}
@@ -104,11 +174,23 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                   <Icon className="h-4 w-4" />
                   {label}
                 </Link>))}
+                {userName && (
+                    <button
+                        onClick={() => {
+                            handleLogout();
+                            setIsSheetOpen(false);
+                        }}
+                        className="flex items-center gap-3 rounded-lg px-3 py-2 text-destructive transition-all hover:bg-destructive/10"
+                    >
+                        <LogOut className="h-4 w-4" />
+                        Tancar Sessió
+                    </button>
+                )}
               </nav>
             </div>
           </SheetContent>
         </Sheet>
-        <div className="w-8 md:hidden" />
+        {/* <div className="w-8 md:hidden" /> */}
       </header>
       <main className="flex-1 flex-col">
         {children}

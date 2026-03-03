@@ -9,6 +9,7 @@ import { LogOut } from 'lucide-react';
 
 export default function DashboardPage() {
   const [userName, setUserName] = useState<string | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -21,30 +22,21 @@ export default function DashboardPage() {
       // If there's no user data, redirect to login
       router.push('/login');
     }
+    setAuthChecked(true);
   }, [router]);
 
-  const handleLogout = () => {
-    localStorage.removeItem('userName');
-    localStorage.removeItem('userCompany');
-    router.push('/login');
-  };
-
   // While checking auth state, show nothing to prevent incorrect content flash
-  if (!userName) {
-    return null;
+  if (!authChecked || !userName) {
+    return null; // or a loading spinner
   }
 
   return (
     <div className="p-4 md:p-8 flex-1">
-        <div className="flex justify-between items-start mb-6">
-            <PageHeader
-                title={`Benvingut ${userName}`}
-            />
-            <Button variant="outline" onClick={handleLogout} className="ml-4 flex-shrink-0">
-                <LogOut className="mr-2 h-4 w-4" />
-                Sortir
-            </Button>
-      </div>
+        <PageHeader
+            title={`Benvingut, ${userName}`}
+            description="Aquí pots trobar un resum de la teva activitat i accessos directes a les funcions principals."
+        />
+        {/* The logout button is now in the main AppShell header */}
     </div>
   );
 }

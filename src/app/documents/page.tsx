@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { PageHeader } from '@/app/components/page-header';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
@@ -58,28 +59,26 @@ interface GroupedInvoice {
 
 // --- MAIN COMPONENT ---
 export default function DocumentsPage() {
+  const router = useRouter();
   const [invoices, setInvoices] = useState<GroupedInvoice[]>([]);
   const [selectedInvoice, setSelectedInvoice] = useState<GroupedInvoice | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [userName, setUserName] = useState<string | null>(null);
+  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
-    // This check only runs on the client
     const name = localStorage.getItem('userName');
-    setUserName(name);
-  }, []);
+    if (name) {
+      setUserName(name);
+    } else {
+      router.push('/login');
+    }
+    setAuthChecked(true);
+  }, [router]);
 
   useEffect(() => {
-    if (!userName) {
-      // If there's no user identified yet, don't fetch.
-      // This handles the case where a non-logged-in user tries to access the page.
-      if (typeof window !== 'undefined' && !localStorage.getItem('userName')) {
-        setLoading(false);
-        setError("No s'ha pogut identificar l'usuari. Si us plau, inicieu sessió.");
-      }
-      return;
-    }
+    if (!userName) return;
 
     const fetchData = async () => {
       setLoading(true);
@@ -199,7 +198,7 @@ export default function DocumentsPage() {
     window.print();
   };
 
-  if (loading) {
+  if (!authChecked || loading) {
     return (
       <div className="p-8 flex-1 flex justify-center items-center">
         <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -333,7 +332,7 @@ export default function DocumentsPage() {
     <div className="p-8 flex-1 print:hidden">
       <PageHeader
         title="Factures"
-        description="Per veure les factures, has d'iniciar sessió a l'apartat que posa Àrea de Clients"
+        description="Aquí pot consultar, veure i imprimir les seves factures."
       />
       {invoices.length > 0 ? (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -363,7 +362,7 @@ export default function DocumentsPage() {
       ) : (
         <Card>
           <CardContent className="pt-6">
-            <p className="text-muted-foreground text-center">No s'han trobat factures.</p>
+            <p className="text-muted-foreground text-center">No s'han trobat factures per al seu usuari.</p>
           </CardContent>
         </Card>
       )}

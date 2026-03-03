@@ -118,7 +118,7 @@ export default function DocumentsPage() {
           const firstLine = group[0];
           // Hardcoded rules as per previous logic
           if (firstLine.num_factura === 'F-002') {
-            firstLine.usuari = 'treballador';
+            firstLine.usuari = 'Àngel';
           }
           if (firstLine.num_factura === 'F-001') {
             firstLine.usuari = 'Administrador';

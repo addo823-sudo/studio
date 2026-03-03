@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -73,6 +74,7 @@ export default function DocumentsPage() {
   useEffect(() => {
     if (!userName) {
       // If there's no user identified yet, don't fetch.
+      // This handles the case where a non-logged-in user tries to access the page.
       if (typeof window !== 'undefined' && !localStorage.getItem('userName')) {
         setLoading(false);
         setError("No s'ha pogut identificar l'usuari. Si us plau, inicieu sessió.");
@@ -114,6 +116,7 @@ export default function DocumentsPage() {
 
         const processedInvoices: GroupedInvoice[] = Object.values(grouped).map(group => {
           const firstLine = group[0];
+          // Hardcoded rules as per previous logic
           if (firstLine.num_factura === 'F-002') {
             firstLine.usuari = 'treballador';
           }
@@ -235,7 +238,7 @@ export default function DocumentsPage() {
             Imprimir PDF
           </Button>
         </div>
-        <Card id="zona-factura" className="p-4 sm:p-8 bg-white text-black shadow-2xl mx-auto max-w-4xl">
+        <Card id="zona-factura" className="p-4 sm:p-8 bg-white text-black shadow-2xl mx-auto max-w-4xl border-none">
           {/* Invoice Header */}
           <header className="grid grid-cols-2 items-start mb-8">
             <div>

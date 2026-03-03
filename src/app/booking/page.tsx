@@ -82,6 +82,14 @@ export default function BookingPage() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!userName) {
+       toast({
+        variant: "destructive",
+        title: 'Error d\'autenticació',
+        description: 'No s\'ha pogut verificar l\'usuari. Si us plau, iniciï sessió de nou.',
+      });
+      return;
+    }
     if (!serviceType || !origin || !destination || !load) {
       toast({
         variant: "destructive",
@@ -93,7 +101,7 @@ export default function BookingPage() {
     setIsSubmitting(true);
 
     const newSolicitud = {
-      id: `BK-${Math.floor(1000 + Math.random() * 9000)}`,
+      id: `BK-${Date.now()}`,
       data: new Date().toLocaleDateString('ca-ES'),
       usuari: userName,
       estat: 'Pendent',
@@ -107,11 +115,11 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ data: [newSolicitud] })
+        body: JSON.stringify(newSolicitud)
       });
 
       if (!response.ok) {
-        throw new Error("No s'ha pogut enviar la sol·licitud.");
+        throw new Error("No s'ha pogut enviar la sol·licitud. Verifiqui les dades i intenti-ho de nou.");
       }
       
       toast({
@@ -126,9 +134,7 @@ export default function BookingPage() {
       setLoad('');
       
       // Refresh list
-      if (userName) {
-        fetchSolicituds(userName);
-      }
+      await fetchSolicituds(userName);
 
     } catch (e: any) {
       toast({

@@ -1,4 +1,3 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -121,7 +120,7 @@ export default function DocumentsPage() {
             firstLine.usuari = 'Àngel';
           }
           if (firstLine.num_factura === 'F-001') {
-            firstLine.usuari = 'Administrador';
+            firstLine.usuari = 'adrián';
           }
           const clientData = users.find(u => u.usuari === firstLine.usuari) || null;
 

@@ -8,24 +8,45 @@ export default function PoliticaCookiesPage() {
         <PageHeader title="Política de Cookies" />
         <div className="bg-card text-card-foreground rounded-lg border shadow-sm p-6 md:p-8 space-y-6">
           
+          <p>Aquest lloc web utilitza cookies pròpies i de tercers per millorar l’experiència de l’usuari, analitzar l’ús del web i mostrar continguts personalitzats. En continuar navegant per aquest lloc, acceptes l’ús de cookies segons la present política.</p>
+          
           <div className="space-y-2">
-            <h2 className="font-bold text-xl">Què són les galetes?</h2>
-            <p>Una galeta (cookie) és un petit fitxer de text que un lloc web emmagatzema al navegador de l’usuari. Les galetes faciliten l’ús i la navegació per una pàgina web i són essencials per al funcionament d’internet, aportant innombrables avantatges en la prestació de serveis interactius.</p>
+            <h2 className="font-bold text-xl">1. Què són les cookies?</h2>
+            <p>Les cookies són fitxers que els llocs web envien al navegador de l’usuari per emmagatzemar informació sobre la seva visita. Aquests fitxers permeten que el lloc web recordi les teves preferències, com l’idioma, la configuració del lloc o les pàgines visitades, i optimitzi la teva experiència de navegació.</p>
+            <p>Les cookies no poden executar programes ni transmetre virus al teu dispositiu. Solament permeten recopilar dades sobre la navegació i ús del web.</p>
           </div>
 
           <div className="space-y-2">
-            <h2 className="font-bold text-xl">Tipus de galetes utilitzades</h2>
-            <p>Aquest lloc web utilitza galetes pròpies i de tercers amb les següents finalitats:</p>
-            <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
-                <li><strong>Galetes tècniques:</strong> Són essencials per al funcionament del web. Permeten a l’usuari la navegació a través del lloc web i la utilització de les diferents opcions o serveis que hi existeixen.</li>
-                <li><strong>Galetes d’anàlisi:</strong> Permeten quantificar el nombre d’usuaris i així realitzar el mesurament i anàlisi estadística de la utilització que fan els usuaris del servei ofert. Per a això s’analitza la seva navegació a la nostra pàgina web amb la finalitat de millorar l’oferta de productes o serveis que li oferim.</li>
-                <li><strong>Galetes de personalització:</strong> Permeten a l'usuari accedir al servei amb algunes característiques de caràcter general predefinides en funció d'una sèrie de criteris al terminal de l'usuari (per exemple, l'idioma).</li>
-            </ul>
+            <h2 className="font-bold text-xl">2. Tipus de cookies que utilitzem</h2>
+            <p>A la nostra web fem servir diferents tipus de cookies, segons la seva finalitat:</p>
+            
+            <h3 className="font-semibold text-lg pt-2">2.1 Cookies estrictament necessàries</h3>
+            <p className="text-muted-foreground">Són essencials per al correcte funcionament del lloc web i per permetre la navegació per les seves pàgines i funcionalitats bàsiques. Sense aquestes cookies, algunes seccions del web no podrien funcionar.</p>
+
+            <h3 className="font-semibold text-lg pt-2">2.2 Cookies de rendiment i analítica</h3>
+            <p className="text-muted-foreground">Aquestes cookies ens ajuden a entendre com utilitzes el web, quines pàgines són més visitades i com podem millorar els nostres serveis. Per exemple, utilitzem cookies d’eines d’analítica com Google Analytics per obtenir estadístiques sobre l’ús del lloc.</p>
+
+            <h3 className="font-semibold text-lg pt-2">2.3 Cookies de funcionalitat</h3>
+            <p className="text-muted-foreground">Permeten recordar les teves preferències i personalitzar la teva experiència. Per exemple, poden recordar l’idioma seleccionat o la configuració d’algunes opcions del web.</p>
+            
+            <h3 className="font-semibold text-lg pt-2">2.4 Cookies publicitàries i de segmentació</h3>
+            <p className="text-muted-foreground">Aquestes cookies ens permeten mostrar-te anuncis adaptats als teus interessos i analitzar l’efectivitat de les campanyes publicitàries. També poden ser utilitzades per tercers proveïdors d’anuncis.</p>
           </div>
           
           <div className="space-y-2">
-            <h2 className="font-bold text-xl">Com gestionar les galetes</h2>
-            <p>L’usuari pot bloquejar, restringir o esborrar les galetes de qualsevol lloc web, utilitzant el seu navegador. A cada navegador l’operativa és diferent, la funció de “Ajuda” li mostrarà com fer-ho.</p>
+            <h2 className="font-bold text-xl">3. Gestió i desactivació de cookies</h2>
+            <p>Pots configurar el teu navegador per rebutjar, bloquejar o eliminar les cookies en qualsevol moment. Els passos per fer-ho varien segons el navegador que utilitzis (Chrome, Firefox, Safari, Edge, etc.).</p>
+            <p>Tingues en compte que, si decideixes desactivar o rebutjar les cookies, algunes funcionalitats del lloc web poden deixar de funcionar correctament i l’experiència de navegació pot veure’s afectada.</p>
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="font-bold text-xl">4. Consentiment</h2>
+            <p>En fer clic a “Acceptar” o continuar navegant, consentis l’ús de cookies segons la present política. Pots revocar aquest consentiment o modificar les teves preferències en qualsevol moment a la configuració del navegador o mitjançant el pop-up de gestió de cookies del web.</p>
+          </div>
+
+          <div className="space-y-2">
+            <h2 className="font-bold text-xl">5. Modificacions de la política de cookies</h2>
+            <p>TTIKO TRANS es reserva el dret de modificar aquesta política de cookies per adaptar-la a novetats legislatives, jurisprudencials o operatives. Es recomana revisar aquesta secció periòdicament per estar informat dels canvis.</p>
           </div>
 
         </div>

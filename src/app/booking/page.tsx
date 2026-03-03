@@ -55,7 +55,7 @@ export default function BookingPage() {
     setIsLoading(true);
     setError(null);
     try {
-      const response = await fetch(`https://sheetdb.io/api/v1/cj07wia9xgfo2/search?usuari=${user}&sheet=solicituds`);
+      const response = await fetch(`https://sheetdb.io/api/v1/cj07wia9xgfo2/search?usuari=${encodeURIComponent(user)}&sheet=solicituds`);
       if (!response.ok) {
         throw new Error("No s'ha pogut carregar l'historial de sol·licituds.");
       }
@@ -114,11 +114,12 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newSolicitud)
+        body: JSON.stringify({ data: [newSolicitud] })
       });
 
       if (!response.ok) {
-        throw new Error("No s'ha pogut enviar la sol·licitud. Verifiqui les dades i intenti-ho de nou.");
+        const errorData = await response.json();
+        throw new Error(errorData.error || "No s'ha pogut enviar la sol·licitud. Verifiqui les dades i intenti-ho de nou.");
       }
       
       toast({

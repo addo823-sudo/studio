@@ -114,7 +114,7 @@ export default function BookingPage() {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ data: [newRequestData] }) 
+        body: JSON.stringify({ data: newRequestData }) 
       });
 
       if (!response.ok) {
@@ -133,7 +133,7 @@ export default function BookingPage() {
         description: 'La teva sol·licitud s\'ha registrat correctament.',
       });
       
-      // Optimistic UI update and form reset
+      // UI update and form reset
       setRequests(prevRequests => [newRequestData, ...prevRequests].sort((a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()));
       setServiceType('');
       setOrigin('');

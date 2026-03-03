@@ -87,8 +87,8 @@ export default function DocumentsPage() {
       setError(null);
       try {
         const [usersRes, docsRes] = await Promise.all([
-          fetch('https://sheetdb.io/api/v1/64gi8fmqcbxx4?sheet=usuaris'),
-          fetch('https://sheetdb.io/api/v1/64gi8fmqcbxx4?sheet=documents')
+          fetch('https://sheetdb.io/api/v1/cj07wia9xgfo2?sheet=usuaris'),
+          fetch('https://sheetdb.io/api/v1/cj07wia9xgfo2?sheet=documents')
         ]);
 
         if (!usersRes.ok || !docsRes.ok) {

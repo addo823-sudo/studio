@@ -333,7 +333,7 @@ export default function DocumentsPage() {
     <div className="p-8 flex-1 print:hidden">
       <PageHeader
         title="Factures"
-        description="Aquí podeu veure i imprimir les vostres factures."
+        description="Per veure les factures, has d'iniciar sessió a l'apartat que posa Àrea de Clients"
       />
       {invoices.length > 0 ? (
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

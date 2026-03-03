@@ -12,14 +12,13 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2, AlertCircle, Send } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
 
 // --- TYPE DEFINITIONS ---
 interface BookingRequest {
   id: string;
   data: string;
   usuari: string;
-  estat: 'Pendent' | 'Aprovat' | string; // Allow other strings for robustness
+  estat: 'Pendent' | 'Aprovat' | string;
   detalls: string;
 }
 
@@ -96,11 +95,11 @@ export default function BookingPage() {
     }
     setIsSubmitting(true);
 
-    const newId = `BK-${Date.now()}${Math.floor(Math.random() * 1000)}`;
+    const newId = `BK-${Date.now()}`;
     const today = new Date().toISOString().split('T')[0];
     const details = `Servei: ${serviceType} | Origen: ${origin} | Destí: ${destination} | Càrrega: ${cargo}`;
 
-    const newRequestData = {
+    const newRequestData: BookingRequest = {
         id: newId,
         data: today,
         usuari: userName,
@@ -116,13 +115,19 @@ export default function BookingPage() {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            data: [newRequestData] // SheetDB expects an array of objects
+            data: newRequestData
         })
       });
 
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Hi ha hagut un problema en enviar la sol·licitud.');
+        let errorMessage = `Error ${response.status}: ${response.statusText}`;
+        try {
+            const errorData = await response.json();
+            errorMessage = errorData.error || 'Hi ha hagut un problema en enviar la sol·licitud.';
+        } catch (e) {
+            // Not a JSON error, stick with status text
+        }
+        throw new Error(errorMessage);
       }
       
       toast({
@@ -130,12 +135,12 @@ export default function BookingPage() {
         description: 'La teva sol·licitud s\'ha registrat correctament.',
       });
       
-      // Reset form and refresh list
+      // Optimistic UI update and form reset
+      setRequests(prevRequests => [newRequestData, ...prevRequests]);
       setServiceType('');
       setOrigin('');
       setDestination('');
       setCargo('');
-      fetchRequests();
 
     } catch (error: any) {
       toast({
